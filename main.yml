@@ -2,6 +2,7 @@
 - name: copy
   hosts: all
   roles:
+    - net-tools
     - web
     - testrole
   

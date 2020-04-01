@@ -1,5 +1,7 @@
 [allgroup]
-192.168.1.157 ansible_user=itroot001
+192.168.1.90 ansible_user=itroot002
+192.168.1.127 ansible_user=itroot003
+192.168.1.68 ansible_user=itroot004
 
 #[group1:children]
 #192.168.1.157

@@ -1,0 +1,12 @@
+- name: Install Iptables
+  hosts: all
+  become: true
+
+  tasks:
+    - name: install IptablesA
+      apt: name=iptables update_cache=yes state=latest
+
+    - name: enabled mod_rewrite
+      apache2_module: name=rewrite state=present
+      notify:
+        - restart iptables
