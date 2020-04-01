@@ -1,0 +1,10 @@
+---
+- tasks:
+    - name: Apache disable
+      service: name=apache2 state=stopped enabled=no
+
+    - name: UnINs Apache
+      apt: 
+        autoremove: yes
+        purge: yes
+      

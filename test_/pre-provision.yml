@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  become: true
+  tasks:  
+    - name: Install Ansible pre-conditions
+      raw: apt-get install -y python python3 python-all python-simplejson
+      ignore_errors: true

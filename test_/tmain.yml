@@ -1,0 +1,32 @@
+---
+- name: My test
+  hosts: all
+  become: true
+
+  vars:
+    message1: Privet
+    message2: World
+    owner: Vasya
+    secret : testing sekret
+
+  tasks:  
+  - name: Print sekret
+    debug:
+      var: secret
+
+  - debug:
+      var: "secreta {{ secret }}"
+
+  - debug:
+      msg: "Vladelec {{ owner }}"
+
+  - set_fact: full_message="{{ message1 }} {{ message2 }} from {{ owner }} secretmsg {{ secret }}" 
+
+  - debug:
+      var: ansible_distribution
+
+  - shell: uptime
+    register: results
+
+  - debug:
+      var: results.stdout      

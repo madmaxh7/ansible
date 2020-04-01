@@ -1,0 +1,4 @@
+- handlers:
+      - name: Unins Apache
+        service: name=apache2 state=absent
+      

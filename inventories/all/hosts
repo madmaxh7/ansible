@@ -1,0 +1,8 @@
+[all group:children]
+192.168.1.185 ansible_user=itroot
+
+[group1]
+192.168.1.185
+
+[group2]
+192.168.1.185

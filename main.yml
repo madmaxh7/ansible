@@ -1,0 +1,7 @@
+---
+- name: copy
+  hosts: all
+  roles:
+    - web
+    - testrole
+  

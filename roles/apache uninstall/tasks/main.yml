@@ -1,0 +1,20 @@
+---
+- name: apache2uninstall
+  tags: uninstall
+  hosts: all
+  become: true
+
+  tasks:  
+  - name: Apache disable
+    service:
+      name: apache2
+      state: stopped
+      enabled: no
+    
+  - name: UnINs Apache
+    autoremove: yes
+    purge: yes
+
+  - name: UnInstall Apache
+    raw: apt-get purge apache2 apache2-utils apache2-bin apache2.2-common
+    ignore_errors: true

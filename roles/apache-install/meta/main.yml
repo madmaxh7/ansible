@@ -1,0 +1,18 @@
+---
+  - name: UninApache
+    hosts: all
+    become: true
+    tasks:
+    - name: Apache disable
+      service: name=apache2 state=stopped enabled=no
+
+    - name: UnINs Apache
+      apt: 
+        autoremove: yes
+        purge: yes
+    
+
+    handlers:
+      - name: Unins Apache
+        service: name=apache2 state=absent
+      
