@@ -1,14 +1,16 @@
-[allgroup]
-192.168.1.90 ansible_user=itroot002
-192.168.1.127 ansible_user=itroot003
-192.168.1.68 ansible_user=itroot004
+[prod_TEST1]
+it001 192.168.1.157 ansible_user=itroot001
+[prod_TEST2]
+it002 192.168.1.90 ansible_user=itroot002
+[prod_AP]
+it003 192.168.1.127 ansible_user=itroot003
+[prod_DB]
+it004 192.168.1.68 ansible_user=itroot004
 
-#[group1:children]
-#192.168.1.157
+[group1:children]
+[prod_TEST1]
+[prod_TEST2]
 
-#[group2:children]
-#192.168.1.157
-
-#[allchild]
-#group1
-#group2
+[group2:children]
+[prod_AP]
+[prod_DB]
